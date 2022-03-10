@@ -24,8 +24,8 @@ jobs:
           sudo apt-get -y install cmake libbluetooth-dev libsdl-dev freeglut3-dev
       - name: Build (shared lib)
         run: | 
-          cmake -B build-shared -DBUILD_SHARED_LIBS=TRUE
-          cmake --build build-shared
+          cmake -B build-shared -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_SHARED_LIBS=TRUE
+          cmake --build build-shared -DCMAKE_BUILD_TYPE=RELEASE
       - name: Build (static lib)
         run: |
           cmake -B build-static
@@ -53,8 +53,8 @@ jobs:
           brew install cmake freeglut sdl
       - name: Build (shared lib)
         run: | 
-          cmake -B build-shared -DBUILD_SHARED_LIBS=TRUE
-          cmake --build build-shared
+          cmake -B build-shared -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_SHARED_LIBS=TRUE
+          cmake --build build-shared -DCMAKE_BUILD_TYPE=RELEASE
       - name: Build (static lib)
         run: |
           cmake -B build-static
